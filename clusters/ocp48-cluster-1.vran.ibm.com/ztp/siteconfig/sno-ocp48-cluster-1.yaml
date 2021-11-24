@@ -8,14 +8,14 @@ spec:
   pullSecretRef:
     name: "assisted-deployment-pull-secret"
   clusterImageSetNameRef: "vran-ocp-v4.8.18"
-  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCiWzSdvX2jmlPwSn4t36TgJVs7V8urfc5FER53d7bd7VW3yHEaVIsRXeuej4fntcH9X3efjCZyfmuuP54g4/S03rZ3bQM+rzngfGs62yoknzJVZB2Po72T/ccUp/TC0AjbaDRkjh/q+3DDTdLo0hj5Jgv9dfW7osB3/2WKnCRObcq2LYQ64ItvRs5Iy7NMJv8EnVuz74ljZ7md5bOD7HOpGxsC3GTVwF+9ixYPgSNudh3fDQhPmQqeZFwXOUoT8bhBhjDUg3/DpPGZj9y5ftNOjNt6zXHRdOwd7kDRb3t4p8fB2ruG/GOuAr0NlIVY8mhJIvn+9oWtdgWjV58jvaNmvJv9T6643+ZI2qn+AZwun33xvWZ+sU7d8s3qPgTNHAaABDUd+PCYsNPsPa1o0+/3Wa1CF7+4m0QSTJ6yW97XsGzDjna0Q1/AAz5/0ZtlHO/sNgJf1Hr/AYJ9jwegf4yyoo3xNT0ckjT+XzzUfN4oYNBDJz9ni+WthSmJPU/n/Dk= root@rhel84-test1.fyre.ibm.com"
+  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDTDngV/AdTc1ALlWjqUi6SjZ2iu1E/2vZezNSiVCAFeQCgop2hp8/U6vz/qC4a4E4WWqgURsDrhaHxic7YCvQ7V6R/ukMV4qRPC326Gn4Thur7bkYb8axctUuuUM3AkZDg/KZ7NkZOV6/2I/WuTvQWc6sMj4AzwdcPmUfnIw6ziiHC8xpuNvggofAn9EqFc0POrLXZRBDF83Me9J9IwW0X9563IoxE9IixcmRudVXat99A0zUyGk6MriBmv/8WiVBbKaPXpgDmp40eek51PBm20/AByJuJ9gsV46wtm6tlqySzyY5pfEWXCAnDQeSquXzPR6cEdKMrK7y68qxfwLtmjpEJiNCZaCex4D4nHyS4BxHsfpYarGsqUqlAUGEMYrNqrcwzxtRGiiHB6TnCw12JGg6QSaazgpBp/GycEtlrxM4UasAdtH5nJSzgElPJSJTB7zgML7Dwb/SujCmrrT0NWczPjdTZzrF++oo4N13NDQIjng2PyLDR1H9GqJ0oeCPfiKMn7BCBoHxQoo8TQYAp7bd8ayj0jF34ZtIXrkw1yhfS6m9yNaplnV/CeniCJYUmuAov4DiqYfz1JKYh9jZlhjsSABcUw4ocsg0uAw5R53NokEKRB6YQJHLBjuSkfMFbBAVFwxCiXrGr9ECUqAmgdCll5G7k4MJUEskTCkt4xQ== vijjay12@oc3078654033.ibm.com"
   clusters:
   - clusterName: "ocp48-cluster-1"
     clusterType: "standard"
     clusterProfile: "cu"
     numMasters: 3
 ####    numWorkers: 2
-    clusterLabels:
+##    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
