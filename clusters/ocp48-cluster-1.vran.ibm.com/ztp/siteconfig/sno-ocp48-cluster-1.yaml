@@ -14,8 +14,8 @@ spec:
     clusterType: "standard"
     clusterProfile: "cu"
     numMasters: 3
-    numWorkers: 2
-    clusterLabels:
+####    numWorkers: 2
+##    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
