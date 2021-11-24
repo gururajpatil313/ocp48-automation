@@ -8,14 +8,14 @@ spec:
   pullSecretRef:
     name: "assisted-deployment-pull-secret"
   clusterImageSetNameRef: "vran-ocp-v4.8.18"
-  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFHriFxgrZX/PiOFld9i2czmz+HZ4QLq5tEOfEe4isJBur2aCPHwru+2x97aQXNkhihHKmwfSXwGi3OSX9VlZarPEz7dQYmNkVoUZTxVWN8zXlUoZNya3HZWhpsnlxBrmbkTQ2+sU+JgkDlqSlWLEGcHxv/ESNQ3z89tfYHVzzm8FGRWnFl4RsIPgDzb1lr40GBOHU0Zrlix5dkFoQRFtMkSy6lh5Gy7JAzFxy2JxxU4kLNr3rKUjwr+rSEOF5/ajZBqQDaWga45l/h0mS16KLEvOC9FJENzhV8dm9wwx1eoRqJUg32K0Hxy67YKu7we4ULmhNZulIIa0AKgDJkKoV"
+  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCiWzSdvX2jmlPwSn4t36TgJVs7V8urfc5FER53d7bd7VW3yHEaVIsRXeuej4fntcH9X3efjCZyfmuuP54g4/S03rZ3bQM+rzngfGs62yoknzJVZB2Po72T/ccUp/TC0AjbaDRkjh/q+3DDTdLo0hj5Jgv9dfW7osB3/2WKnCRObcq2LYQ64ItvRs5Iy7NMJv8EnVuz74ljZ7md5bOD7HOpGxsC3GTVwF+9ixYPgSNudh3fDQhPmQqeZFwXOUoT8bhBhjDUg3/DpPGZj9y5ftNOjNt6zXHRdOwd7kDRb3t4p8fB2ruG/GOuAr0NlIVY8mhJIvn+9oWtdgWjV58jvaNmvJv9T6643+ZI2qn+AZwun33xvWZ+sU7d8s3qPgTNHAaABDUd+PCYsNPsPa1o0+/3Wa1CF7+4m0QSTJ6yW97XsGzDjna0Q1/AAz5/0ZtlHO/sNgJf1Hr/AYJ9jwegf4yyoo3xNT0ckjT+XzzUfN4oYNBDJz9ni+WthSmJPU/n/Dk= root@rhel84-test1.fyre.ibm.com"
   clusters:
   - clusterName: "ocp48-cluster-1"
     clusterType: "standard"
     clusterProfile: "cu"
     numMasters: 3
 ####    numWorkers: 2
-    clusterLabels:
+##    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
@@ -50,11 +50,11 @@ spec:
                    dhcp: true
                  ipv6:
                    enabled: false
-       - hostName: "ocp48-master-2.ocp48-cluster-1.vran.ibm.com"
-         bmcAddress: "idrac-virtualmedia+https://9.37.131.44/redfish/v1/Systems/System.Embedded.1"
+       - hostName: "master-5-ocp48.ocp48-cluster-1.vran.ibm.com"
+         bmcAddress: "idrac-virtualmedia+https://9.37.131.73/redfish/v1/Systems/System.Embedded.1"
          bmcCredentialsName:
-           name: "ocp48-cluster-1-ocp48-master-2-bmh-secret"
-         bootMACAddress: "78:AC:44:22:9B:74"
+           name: "ocp48-cluster-1-master-5-ocp48-bmh-secret"
+         bootMACAddress: "78:AC:44:32:7A:D0"
          bootMode: "UEFI"
          rootDeviceHints:
            deviceName: "/dev/sda"
@@ -62,22 +62,22 @@ spec:
          nodeNetwork:
             interfaces:
             - name: eno1
-              macAddress: "78:AC:44:22:9B:74"
+              macAddress: "78:AC:44:32:7A:D0"
             config:
                interfaces:
                - name: eno1
                  type: ethernet
                  state: up
-                 macAddress: "78:AC:44:22:9B:74"
+                 macAddress: "78:AC:44:32:7A:D0"
                  ipv4:
                    enabled: true
                    dhcp: true
                  ipv6:
                    enabled: false
-       - hostName: "ocp48-master-3.ocp48-cluster-1.vran.ibm.com"
+       - hostName: "master-6-ocp48.ocp48-cluster-1.vran.ibm.com"
          bmcAddress: "idrac-virtualmedia+https://9.37.131.45/redfish/v1/Systems/System.Embedded.1"
          bmcCredentialsName:
-           name: "ocp48-cluster-1-ocp48-master-3-bmh-secret"
+           name: "ocp48-cluster-1-master-6-ocp48-bmh-secret"
          bootMACAddress: "78:AC:44:22:99:10"
          bootMode: "UEFI"
          rootDeviceHints:
