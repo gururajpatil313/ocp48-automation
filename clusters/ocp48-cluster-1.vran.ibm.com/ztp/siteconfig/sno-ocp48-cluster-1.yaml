@@ -19,10 +19,10 @@ spec:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
-       - cidr: /
-         hostPrefix: 
+       - cidr: 10.128.0.0/14
+         hostPrefix: 23
     serviceNetwork:
-       - /
+       - 172.30.0.0/16
     apiVIP: 9.37.195.38
     ingressVIP: 9.37.195.39
     nodes:
