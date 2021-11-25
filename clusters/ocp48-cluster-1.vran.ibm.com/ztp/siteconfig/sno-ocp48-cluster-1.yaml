@@ -15,7 +15,7 @@ spec:
     clusterProfile: "cu"
     numMasters: 3
 ####    numWorkers: 2
-    clusterLabels:
+##    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
@@ -50,6 +50,30 @@ spec:
                    dhcp: true
                  ipv6:
                    enabled: false
+       - hostName: "master-5-ocp48.ocp48-cluster-1.vran.ibm.com"
+         bmcAddress: "idrac-virtualmedia+https://9.37.131.73/redfish/v1/Systems/System.Embedded.1"
+         bmcCredentialsName:
+           name: "ocp48-cluster-1-master-5-ocp48-bmh-secret"
+         bootMACAddress: "78:AC:44:32:7A:D0"
+         bootMode: "UEFI"
+         rootDeviceHints:
+           deviceName: "/dev/sda"
+         cpuset: "0-1,38-39"
+         nodeNetwork:
+            interfaces:
+            - name: eno1
+              macAddress: "78:AC:44:32:7A:D0"
+            config:
+               interfaces:
+               - name: eno1
+                 type: ethernet
+                 state: up
+                 macAddress: "78:AC:44:32:7A:D0"
+                 ipv4:
+                   enabled: true
+                   dhcp: true
+                 ipv6:
+                   enabled: false
        - hostName: "master-6-ocp48.ocp48-cluster-1.vran.ibm.com"
          bmcAddress: "idrac-virtualmedia+https://9.37.131.45/redfish/v1/Systems/System.Embedded.1"
          bmcCredentialsName:
@@ -69,30 +93,6 @@ spec:
                  type: ethernet
                  state: up
                  macAddress: "78:AC:44:22:99:10"
-                 ipv4:
-                   enabled: true
-                   dhcp: true
-                 ipv6:
-                   enabled: false
-       - hostName: "master-7-ocp48.ocp48-cluster-1.vran.ibm.com"
-         bmcAddress: "redfish-virtualmedia+https://9.37.131.103/redfish/v1/Systems/System.Embedded.1"
-         bmcCredentialsName:
-           name: "ocp48-cluster-1-master-7-ocp48-bmh-secret"
-         bootMACAddress: "3C:EC:EF:5E:BC:78"
-         bootMode: "UEFI"
-         rootDeviceHints:
-           deviceName: "/dev/sda"
-         cpuset: "0-1,38-39"
-         nodeNetwork:
-            interfaces:
-            - name: eno1
-              macAddress: "3C:EC:EF:5E:BC:78"
-            config:
-               interfaces:
-               - name: eno1
-                 type: ethernet
-                 state: up
-                 macAddress: "3C:EC:EF:5E:BC:78"
                  ipv4:
                    enabled: true
                    dhcp: true
