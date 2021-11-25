@@ -15,14 +15,14 @@ spec:
     clusterProfile: "cu"
     numMasters: 3
 ####    numWorkers: 2
-##    clusterLabels:
+    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
-       - cidr: /
-         hostPrefix: 
+       - cidr: 10.128.0.0/14
+         hostPrefix: 23
     serviceNetwork:
-       - /
+       - 172.30.0.0/16
     apiVIP: 9.37.195.38
     ingressVIP: 9.37.195.39
     nodes:
@@ -78,21 +78,21 @@ spec:
          bmcAddress: "idrac-virtualmedia+https://9.37.131.45/redfish/v1/Systems/System.Embedded.1"
          bmcCredentialsName:
            name: "ocp48-cluster-1-master-6-ocp48-bmh-secret"
-         bootMACAddress: "78:AC:44:22:99:30"
+         bootMACAddress: "78:AC:44:22:99:10"
          bootMode: "UEFI"
          rootDeviceHints:
            deviceName: "/dev/sda"
          cpuset: "0-1,38-39"
          nodeNetwork:
             interfaces:
-            - name: eno1
-              macAddress: "78:AC:44:22:99:30"
+            - name: eno3
+              macAddress: "78:AC:44:22:99:10"
             config:
                interfaces:
-               - name: eno1
+               - name: eno3
                  type: ethernet
                  state: up
-                 macAddress: "78:AC:44:22:99:30"
+                 macAddress: "78:AC:44:22:99:10"
                  ipv4:
                    enabled: true
                    dhcp: true
