@@ -75,7 +75,7 @@ spec:
                  ipv6:
                    enabled: false
        - hostName: "master-7-ocp48.ocp48-cluster-1.vran.ibm.com"
-         bmcAddress: "idrac-virtualmedia+https://9.37.131.103/redfish/v1/Systems/System.Embedded.1"
+         bmcAddress: "redfish-virtualmedia+https://9.37.131.103/redfish/v1/Systems/System.Embedded.1"
          bmcCredentialsName:
            name: "ocp48-cluster-1-master-7-ocp48-bmh-secret"
          bootMACAddress: "3C:EC:EF:5E:BC:78"
