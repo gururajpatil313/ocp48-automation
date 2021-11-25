@@ -15,14 +15,14 @@ spec:
     clusterProfile: "cu"
     numMasters: 3
 ####    numWorkers: 2
-    clusterLabels:
+##    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
-       - cidr: 10.128.0.0/14
-         hostPrefix: 23
+       - cidr: /
+         hostPrefix: 
     serviceNetwork:
-       - 172.30.0.0/16
+       - /
     apiVIP: 9.37.195.38
     ingressVIP: 9.37.195.39
     nodes:
@@ -50,30 +50,6 @@ spec:
                    dhcp: true
                  ipv6:
                    enabled: false
-       - hostName: "master-5-ocp48.ocp48-cluster-1.vran.ibm.com"
-         bmcAddress: "idrac-virtualmedia+https://9.37.131.73/redfish/v1/Systems/System.Embedded.1"
-         bmcCredentialsName:
-           name: "ocp48-cluster-1-master-5-ocp48-bmh-secret"
-         bootMACAddress: "78:AC:44:32:7A:D0"
-         bootMode: "UEFI"
-         rootDeviceHints:
-           deviceName: "/dev/sda"
-         cpuset: "0-1,38-39"
-         nodeNetwork:
-            interfaces:
-            - name: eno1
-              macAddress: "78:AC:44:32:7A:D0"
-            config:
-               interfaces:
-               - name: eno1
-                 type: ethernet
-                 state: up
-                 macAddress: "78:AC:44:32:7A:D0"
-                 ipv4:
-                   enabled: true
-                   dhcp: true
-                 ipv6:
-                   enabled: false
        - hostName: "master-6-ocp48.ocp48-cluster-1.vran.ibm.com"
          bmcAddress: "idrac-virtualmedia+https://9.37.131.45/redfish/v1/Systems/System.Embedded.1"
          bmcCredentialsName:
@@ -85,14 +61,38 @@ spec:
          cpuset: "0-1,38-39"
          nodeNetwork:
             interfaces:
-            - name: eno3
+            - name: eno1
               macAddress: "78:AC:44:22:99:30"
             config:
                interfaces:
-               - name: eno3
+               - name: eno1
                  type: ethernet
                  state: up
                  macAddress: "78:AC:44:22:99:30"
+                 ipv4:
+                   enabled: true
+                   dhcp: true
+                 ipv6:
+                   enabled: false
+       - hostName: "master-9-ocp48.ocp48-cluster-1.vran.ibm.com"
+         bmcAddress: "idrac-virtualmedia+https://9.37.131.43/redfish/v1/Systems/System.Embedded.1"
+         bmcCredentialsName:
+           name: "ocp48-cluster-1-master-9-ocp48-bmh-secret"
+         bootMACAddress: "F0:D4:E2:E8:EA:7C"
+         bootMode: "UEFI"
+         rootDeviceHints:
+           deviceName: "/dev/sda"
+         cpuset: "0-1,38-39"
+         nodeNetwork:
+            interfaces:
+            - name: eno1
+              macAddress: "F0:D4:E2:E8:EA:7C"
+            config:
+               interfaces:
+               - name: eno1
+                 type: ethernet
+                 state: up
+                 macAddress: "F0:D4:E2:E8:EA:7C"
                  ipv4:
                    enabled: true
                    dhcp: true
