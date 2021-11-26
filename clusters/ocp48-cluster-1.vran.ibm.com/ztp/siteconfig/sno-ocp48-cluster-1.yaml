@@ -14,7 +14,7 @@ spec:
     clusterType: "sno"
     clusterProfile: "cu"
     numMasters: 1
-#    clusterLabels:
+    clusterLabels:
       common: true
       sites : "ocp48-cluster-1"
     clusterNetwork:
