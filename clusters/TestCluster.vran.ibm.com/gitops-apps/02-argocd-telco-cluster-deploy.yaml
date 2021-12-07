@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clusters-testcluster.vran.ibm.com
+  namespace: openshift-gitops
+spec: 
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: clusters/TestCluster.vran.ibm.com/ztp/siteconfig
+    repoURL: https://github.com/gururajpatil313/ocp48-automation.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
