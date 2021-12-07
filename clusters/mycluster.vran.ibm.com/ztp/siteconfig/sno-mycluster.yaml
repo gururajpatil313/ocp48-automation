@@ -14,7 +14,6 @@ spec:
     clusterType: "standard"
     clusterProfile: "du"
     numMasters: 3
-    numWorkers: 2
     clusterLabels:
       common: true
       sites : "mycluster"
