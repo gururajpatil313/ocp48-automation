@@ -1,0 +1,49 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  name: mycluster-custom-role
+rules:
+- apiGroups:
+  - agent-install.openshift.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mycluster-custom-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: mycluster-custom-role
+subjects:
+  - kind: ServiceAccount
+    name: mycluster-argocd-application-controller
+    namespace: mycluster
+  - kind: ServiceAccount
+    name: mycluster-argocd-server
+    namespace: mycluster
+---
+# WARNING: ONLY USE THIS FOR MANAGING CLUSTERS NOT FOR REGULAR USERS
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mycluster-cluster-admin-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: mycluster-argocd-application-controller
+    namespace: mycluster
+  # NOTE: THIS INSTANCE IT IS ONLY FOR CLUSTER ADMINS
+  - kind: ServiceAccount
+    name: mycluster-argocd-server
+    namespace: mycluster    
+    
